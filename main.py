@@ -16,7 +16,7 @@ music_name = None
 root = None
 entry = None
 label = None
-font_value = None
+font_value = 28
 
 def on_enter_pressed(event, var_name):
     global root
