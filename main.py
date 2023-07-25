@@ -25,6 +25,11 @@ def on_enter_pressed(event, var_name):
     root.destroy()
     root.quit()
 
+def on_closing():
+    global root
+    root.destroy()
+    root.quit()
+
 def mount_tk_entry(label_text, var_name):
     global root
     global entry
@@ -36,6 +41,7 @@ def mount_tk_entry(label_text, var_name):
     window_height = 100
     x = (screen_width - window_width) // 2
     y = (screen_height - window_height) // 2
+    root.protocol("WM_DELETE_WINDOW", on_closing)
     root.geometry(f"{window_width}x{window_height}+{x}+{y}")
     label = tk.Label(root, text=label_text)
     label.pack(side="left")
